@@ -158,7 +158,9 @@ function startElevatorSystem() {
 }
 
 const elevatorSystem = {
-    canvas : document.createElement("canvas"), // canvas is an area to draw on
+    canvas: null,
+
+    //canvas : document.createElement("canvas"), // canvas is an area to draw on
 
     initFloors: function() {
         for (let floor = 0; floor < numFloors; ++floor) {
@@ -187,8 +189,9 @@ const elevatorSystem = {
     },
 
     initCanvas : function() {
-        this.canvas.width = canvasWidth; // can be set as DOM property HTMLCanvasElement.width instead of here
-        this.canvas.height = canvasHeight;
+        this.canvas = document.getElementById("myCanvas");
+        //this.canvas.width = canvasWidth; // can be set as DOM property HTMLCanvasElement.width instead of here
+        //this.canvas.height = canvasHeight;
         this.context = this.canvas.getContext("2d"); // a context lets you draw on the canvas
         //document.body.insertBefore(this.canvas, document.body.childNodes[0]); // inserts the canvas in the DOM
         //document.body.insertAfter(this.canvas,document.getElementById('title'));
