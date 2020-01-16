@@ -15,7 +15,7 @@ The metrics displayed at the top are:
 2. Ave Travel Time - the average time a passenger is inside an elevator
 3. Ave Total Time - the average time between call button press and arrival at destination
 
-## Future work
+### Future work
 
 Instead of or in addition to the manual call button click requests, this simulation could be driven by a traffic model that contains call requests by time of day.
 
