@@ -195,7 +195,7 @@ const elevatorSystem = {
         this.context = this.canvas.getContext("2d"); // a context lets you draw on the canvas
         //document.body.insertBefore(this.canvas, document.body.childNodes[0]); // inserts the canvas in the DOM
         //document.body.insertAfter(this.canvas,document.getElementById('title'));
-        document.body.appendChild(this.canvas);
+        //document.body.appendChild(this.canvas);
 
         // Add event listener for `click` events
         this.canvas.addEventListener('click', function(event) {
@@ -219,7 +219,8 @@ const elevatorSystem = {
     },
 
     start : function() {
-        this.interval = setInterval(updateElevatorSystem, updateInterval); // updateElevatorSystem called every updateInterval ms
+        //this.interval = setInterval(updateElevatorSystem, updateInterval); // updateElevatorSystem called every updateInterval ms
+        this.interval=window.rInterval(updateElevatorSystem,updateInterval);
     },
 
     clear : function() {
@@ -229,6 +230,21 @@ const elevatorSystem = {
     floorLabel: function(floor) {
         if(floor === (numFloors-1)) return 'G';
         else return numFloors-floor-1;
+    }
+}
+
+window.rInterval=function(callback,delay){
+    var dateNow=Date.now,
+        requestAnimation=window.requestAnimationFrame,
+        start=dateNow(),
+        stop,
+        intervalFunc=function(){
+            dateNow()-start<delay||(start+=delay,callback());
+            stop||requestAnimation(intervalFunc)
+        }
+    requestAnimation(intervalFunc);
+    return{
+        clear:function(){stop=1}
     }
 }
 
