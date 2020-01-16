@@ -17,6 +17,8 @@ Instead of or in addition to the manual call button click requests, this simulat
 
 Dropoff floors could also be driven by a historical traffic model.  Currently, the probability of dropoff is equal for all possible destination floors (e.g., if it is an up call request, only possible destinations are floors above).
 
+Elevators could be prepositioned (e.g., send all elevators to the ground floor when they are idle to pick up passengers during morning arrival to work).
+
 ### Personal website
 
 Please visit my personal [website](https://ctoinsight.com/) for posts on software and management
