@@ -219,8 +219,8 @@ const elevatorSystem = {
     },
 
     start : function() {
-        //this.interval = setInterval(updateElevatorSystem, updateInterval); // updateElevatorSystem called every updateInterval ms
-        this.interval=window.rInterval(updateElevatorSystem,updateInterval);
+        this.interval = setInterval(updateElevatorSystem, updateInterval); // updateElevatorSystem called every updateInterval ms
+        //this.interval=window.rInterval(updateElevatorSystem,updateInterval);
     },
 
     clear : function() {
@@ -400,7 +400,8 @@ class Elevator{
     }
 
     // elevator completed a sweep and can accept a new set of tasks
-    acceptOpenTask = function(){
+    //acceptOpenTask = function(){
+    acceptOpenTask (){
 
         if(openCallRequests.length > 0)
         {
@@ -430,7 +431,7 @@ class Elevator{
         }
     }
 
-    sortTaskList = function(callRequestDirection)
+    sortTaskList (callRequestDirection)
     {
         if(callRequestDirection === CallRequestDirection.UP)
             this.taskList.sort(function(a,b){
@@ -442,14 +443,14 @@ class Elevator{
             });
     }
 
-    distanceToFloor = function(floor) { return Math.abs(this.y-floorLocationY[floor]);}
+    distanceToFloor (floor) { return Math.abs(this.y-floorLocationY[floor]);}
 
-    aboveMe = function(floor)
+    aboveMe (floor)
     {
         if(floorLocationY[floor] <= this.y) return true;
         else return false;
     }
-    aboveFirstTask = function(floor)
+    aboveFirstTask (floor)
     {
         if(this.taskList.length === 0){
             console.log("ERROR: Elevator.aboveFirstTask() with no tasks in list");
@@ -458,12 +459,12 @@ class Elevator{
         if(floorLocationY[floor] <= floorLocationY[this.taskList[0].destinationFloor()]) return true;
         else return false;
     }
-    belowMe = function(floor)
+    belowMe (floor)
     {
         if(floorLocationY[floor] >= this.y) return true;
         else return false;
     }
-    belowFirstTask = function(floor)
+    belowFirstTask (floor)
     {
         if(this.taskList.length === 0){
             console.log("ERROR: Elevator.belowFirstTask() with no tasks in list");
@@ -473,7 +474,7 @@ class Elevator{
         else return false;
     }
 
-    addTask = function(callRequest)
+    addTask (callRequest)
     {
         if(callRequest.pickupFloor < 0 || callRequest.pickupFloor >= numFloors){
             console.log("ERROR: addTask() floor out of range " + floor);
@@ -499,7 +500,7 @@ class Elevator{
             console.log("ERROR: Elevator.addTask() with unknown objectiveState");
     }
 
-    arrived = function(){
+    arrived (){
 
         let callRequestDirection = -1; // if we arrived at a floor with a call request
         const arrivalFloor = this.taskList[0].destinationFloor(); // where we just arrived
@@ -575,7 +576,7 @@ class Elevator{
         this.speedY = 0;
     }
 
-    newPos = function()
+    newPos ()
     {
         switch(this.travelState) {
             case TravelState.STOPPED_CLOSED: // waiting for a new task
