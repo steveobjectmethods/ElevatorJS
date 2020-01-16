@@ -25,4 +25,4 @@ Elevators could be prepositioned (e.g., send all elevators to the ground floor w
 
 ### Personal website
 
-Please visit my personal [website](https://ctoinsight.com/) for posts on software and management
+Please visit my personal [website](https://ctoinsight.com/) for posts on software and technology management.
