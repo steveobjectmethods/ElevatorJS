@@ -37,14 +37,12 @@ let pickedUpRequests = [];  // requests that have been picked up (including comp
 let completedRequests = []; // requests that have been completed
 
 // coordinates for drawing
-const canvasWidth = 375;
-const canvasHeight = 600;
-const metricsLocationY = 30;
-const instructionsLocationY = 560;
+const metricsLocationY = 18;
+const instructionsLocationY = 520;
 const waitTimeMetricX = 10;
 const travelTimeMetricX = 130;
 const totalTimeMetricX = 260;
-const firstFloorLocationY = 50;
+const firstFloorLocationY = 30;
 let floorLocationY = [];
 const spaceBetweenFloors = 60;
 const elevatorHeight = 50;
@@ -165,7 +163,8 @@ const elevatorSystem = {
     initFloors: function() {
         for (let floor = 0; floor < numFloors; ++floor) {
 
-            floorLocationY.push(floor===0?firstFloorLocationY:(floor+1)*spaceBetweenFloors);
+            //floorLocationY.push(floor===0?firstFloorLocationY:(floor+1)*spaceBetweenFloors);
+            floorLocationY.push(floor===0?firstFloorLocationY:firstFloorLocationY+ floor*spaceBetweenFloors);
             floorsWaitingUp.push(FloorWaitingState.NO_REQUEST);
             floorsWaitingDown.push(FloorWaitingState.NO_REQUEST);
             (floor === 0) ? upCallButtonCoords.push(null): // no upcall button on top floor
@@ -190,12 +189,7 @@ const elevatorSystem = {
 
     initCanvas : function() {
         this.canvas = document.getElementById("myCanvas");
-        //this.canvas.width = canvasWidth; // can be set as DOM property HTMLCanvasElement.width instead of here
-        //this.canvas.height = canvasHeight;
         this.context = this.canvas.getContext("2d"); // a context lets you draw on the canvas
-        //document.body.insertBefore(this.canvas, document.body.childNodes[0]); // inserts the canvas in the DOM
-        //document.body.insertAfter(this.canvas,document.getElementById('title'));
-        //document.body.appendChild(this.canvas);
 
         // Add event listener for `click` events
         this.canvas.addEventListener('click', function(event) {
@@ -220,7 +214,6 @@ const elevatorSystem = {
 
     start : function() {
         this.interval = setInterval(updateElevatorSystem, updateInterval); // updateElevatorSystem called every updateInterval ms
-        //this.interval=window.rInterval(updateElevatorSystem,updateInterval);
     },
 
     clear : function() {
@@ -230,21 +223,6 @@ const elevatorSystem = {
     floorLabel: function(floor) {
         if(floor === (numFloors-1)) return 'G';
         else return numFloors-floor-1;
-    }
-}
-
-window.rInterval=function(callback,delay){
-    var dateNow=Date.now,
-        requestAnimation=window.requestAnimationFrame,
-        start=dateNow(),
-        stop,
-        intervalFunc=function(){
-            dateNow()-start<delay||(start+=delay,callback());
-            stop||requestAnimation(intervalFunc)
-        }
-    requestAnimation(intervalFunc);
-    return{
-        clear:function(){stop=1}
     }
 }
 
