@@ -1,6 +1,6 @@
 ## Elevator System Simulation in Javascript
 
-This is an interactive elevator system simulation implemented in Javascript (ES6).  Its been tested on current desktop versions of Chrome and Safari and also Safari on iPhone 7 plus.
+This is an interactive elevator system simulation implemented in Javascript (ES6).  It's been tested on current desktop versions of Chrome and Safari and also Safari on iPhone 7 plus.
 
 Website running this code is [here](https://steveobjectmethods.github.io/ElevatorJS).
 
