@@ -2,6 +2,8 @@
 
 This is an interactive elevator system simulation implemented in Javascript (ES6).  Its been tested on current desktop versions of Chrome and Safari and also Safari on iPhone 7 plus.
 
+Website running this code is [here](https://steveobjectmethods.github.io/ElevatorJS).
+
 The type of elevator system that is being simulated has call buttons outside the elevators to make up/down requests.  There are elevator systems where you can enter a destination floor outside the elevator but this implementation does not model that type of system.
 
 The user can click on up/down call buttons (the triangles) and these requests will be dispatched to the elevators.  The floor button pressed by the passenger after she enters the elevator is randomized.  Note that this doesn't model the scenario where a group of people press a call button and each gets in and presses a different destination floor.
