@@ -6,6 +6,8 @@ The type of elevator system that is being simulated has call buttons outside the
 
 The user can click on up/down call buttons (the triangles) and these requests will be dispatched to the elevators.  The floor button pressed by the passenger after she enters the elevator is randomized.  Note that this doesn't model the scenario where a group of people press a call button and each gets in and presses a different destination floor.
 
+Elevator acceleration and deceleration is modeled.  Door open/close/pause at open are modeled.
+
 The metrics displayed at the top are:
 1. Ave Wait Time - the average time a passenger has to wait to be picked up
 2. Ave Travel Time - the average time a passenger is inside an elevator
