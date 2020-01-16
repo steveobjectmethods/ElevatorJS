@@ -219,8 +219,13 @@ const elevatorSystem = {
     },
 
     start : function() {
+<<<<<<< HEAD
         this.interval = setInterval(updateElevatorSystem, updateInterval); // updateElevatorSystem called every updateInterval ms
         //this.interval=window.rInterval(updateElevatorSystem,updateInterval);
+=======
+        //this.interval = setInterval(updateElevatorSystem, updateInterval); // updateElevatorSystem called every updateInterval ms
+        this.interval=window.rInterval(updateElevatorSystem,updateInterval);
+>>>>>>> 364c8f88cc2d7515cd1bdf0ee3b51877cce8d625
     },
 
     clear : function() {
