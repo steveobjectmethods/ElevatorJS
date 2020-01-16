@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Elevator System Simulator in Javascript
 
 You can use the [editor on GitHub](https://github.com/steveobjectmethods/ElevatorJS/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
