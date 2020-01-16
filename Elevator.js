@@ -158,8 +158,6 @@ function startElevatorSystem() {
 const elevatorSystem = {
     canvas: null,
 
-    //canvas : document.createElement("canvas"), // canvas is an area to draw on
-
     initFloors: function() {
         for (let floor = 0; floor < numFloors; ++floor) {
 
